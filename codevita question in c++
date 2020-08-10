@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,k,sum;
+     cin>>n>>k;
+     int a[n],p=0;
+     int add=INT_MAX;
+     while(k--){
+          int a[n],p=0;
+          int max=0;
+          for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        sum=0;
+        sort(a,a+n,greater<int>());
+        for(int i=0;i<n;i++){
+         if(a[i]>max){
+         max=a[i];
+         a[p]=max/2;
+         p++;
+         }
+          else{
+              a[p]=a[i];
+              p++;
+          }
+     } 
+       for(int p=0;p<n;p++){
+        sum+=a[p];
+       
+    }  
+     if(sum<add)
+         add=sum;       
+    }
+     cout<<add<<endl; 
+     return 0;
+}   
+     
+    
+
+
